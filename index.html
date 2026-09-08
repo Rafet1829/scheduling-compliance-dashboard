@@ -24,6 +24,7 @@
         <button class="nav-item" data-view="training"><span>03</span> Training</button>
         <button class="nav-item" data-view="leave"><span>04</span> Leave & cover</button>
         <button class="nav-item" data-view="tasks"><span>05</span> Action log</button>
+        <button class="nav-item" data-view="staff"><span>06</span> Staff directory</button>
       </nav>
 
       <div class="sidebar-note">
@@ -45,6 +46,8 @@
           </label>
           <a class="button secondary button-link" href="downloads/Rafet_Scheduling_Training_Compliance_Showcase.xlsx" download>Download Excel</a>
           <button class="button secondary" id="export-button">Export CSV</button>
+          <button class="button primary hidden" id="add-shift-button">+ Add shift</button>
+          <button class="button primary hidden" id="add-staff-button">+ Add staff</button>
           <button class="button primary" id="add-task-button">+ Add task</button>
         </div>
       </header>
@@ -74,6 +77,53 @@
       <div class="dialog-actions">
         <button class="button secondary" value="cancel">Cancel</button>
         <button class="button primary" value="default" id="save-task-button">Save task</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="shift-dialog">
+    <form method="dialog" id="shift-form">
+      <input type="hidden" name="shiftId">
+      <div class="dialog-header">
+        <div><p class="eyebrow">ROTA RECORD</p><h2 id="shift-dialog-title">Add shift</h2></div>
+        <button class="icon-button" value="cancel" aria-label="Close">×</button>
+      </div>
+      <div class="form-row">
+        <label>Date<input name="date" type="date" required></label>
+        <label>Shift<select name="shift"><option>Early</option><option>Late</option><option>Custom</option></select></label>
+      </div>
+      <div class="form-row">
+        <label>Start time<input name="start" type="time" required></label>
+        <label>End time<input name="end" type="time" required></label>
+      </div>
+      <div class="form-row">
+        <label>Required role<select name="role" required><option>Team Lead</option><option>Coordinator</option><option>Administrator</option></select></label>
+        <label>Assigned staff<select name="staff" id="shift-staff-select" required></select></label>
+      </div>
+      <label>Assigned task<input name="task" required placeholder="e.g. Opening checks and handover"></label>
+      <label>Notes<input name="note" placeholder="Optional handover or coverage note"></label>
+      <div class="dialog-actions">
+        <button class="button secondary" value="cancel">Cancel</button>
+        <button class="button primary" value="default">Save shift</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="staff-dialog">
+    <form method="dialog" id="staff-form">
+      <div class="dialog-header">
+        <div><p class="eyebrow">STAFF DIRECTORY</p><h2>Add staff member</h2></div>
+        <button class="icon-button" value="cancel" aria-label="Close">×</button>
+      </div>
+      <label>Name<input name="name" required placeholder="e.g. Staff K"></label>
+      <div class="form-row">
+        <label>Default role<select name="role"><option>Team Lead</option><option>Coordinator</option><option>Administrator</option></select></label>
+        <label>Weekly hours<input name="weeklyHours" type="number" min="0" max="60" value="40" required></label>
+      </div>
+      <label>Availability<input name="availability" required placeholder="e.g. Monday–Friday"></label>
+      <div class="dialog-actions">
+        <button class="button secondary" value="cancel">Cancel</button>
+        <button class="button primary" value="default">Add staff member</button>
       </div>
     </form>
   </dialog>
