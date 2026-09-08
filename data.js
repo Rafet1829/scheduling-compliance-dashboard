@@ -1,4 +1,16 @@
 window.DEMO_DATA = {
+  staff: [
+    {id:"ST-001",name:"Staff A",role:"Team Lead",weeklyHours:40,availability:"Monday–Sunday"},
+    {id:"ST-002",name:"Staff B",role:"Coordinator",weeklyHours:32,availability:"Monday–Sunday"},
+    {id:"ST-003",name:"Staff C",role:"Administrator",weeklyHours:40,availability:"Monday–Friday"},
+    {id:"ST-004",name:"Staff D",role:"Team Lead",weeklyHours:32,availability:"Monday–Saturday"},
+    {id:"ST-005",name:"Staff E",role:"Administrator",weeklyHours:24,availability:"Monday–Friday"},
+    {id:"ST-006",name:"Staff F",role:"Coordinator",weeklyHours:40,availability:"Monday–Sunday"},
+    {id:"ST-007",name:"Staff G",role:"Team Lead",weeklyHours:40,availability:"Monday–Sunday"},
+    {id:"ST-008",name:"Staff H",role:"Coordinator",weeklyHours:32,availability:"Wednesday–Sunday"},
+    {id:"ST-009",name:"Staff I",role:"Team Lead",weeklyHours:24,availability:"Friday–Sunday"},
+    {id:"ST-010",name:"Staff J",role:"Administrator",weeklyHours:24,availability:"Friday–Sunday"}
+  ],
   rota: [
     {date:"2026-09-07",day:"Monday",shift:"Early",time:"07:00–15:00",hours:8,role:"Team Lead",staff:"Staff A",status:"Covered",note:"Opening checks"},
     {date:"2026-09-07",day:"Monday",shift:"Late",time:"14:00–22:00",hours:8,role:"Coordinator",staff:"Staff B",status:"Covered",note:"Closing report"},
