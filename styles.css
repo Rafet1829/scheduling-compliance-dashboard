@@ -22,6 +22,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--canvas); color: var(--ink); font-family: "DM Sans", sans-serif; }
 button, input, select { font: inherit; }
 button { cursor: pointer; }
+.hidden { display: none !important; }
 
 .app-shell { min-height: 100vh; display: grid; grid-template-columns: 248px minmax(0, 1fr); }
 .sidebar { position: sticky; top: 0; height: 100vh; padding: 28px 20px; background: var(--navy); color: white; display: flex; flex-direction: column; }
@@ -94,6 +95,10 @@ tbody tr:hover { background: #fafbfe; }
 .badge { display: inline-flex; align-items: center; padding: 5px 9px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; }
 .badge.green { color: var(--green); background: var(--green-soft); }.badge.amber { color: var(--amber); background: var(--amber-soft); }.badge.red { color: var(--red); background: var(--red-soft); }.badge.blue { color: var(--blue); background: var(--blue-soft); }.badge.grey { color: #596578; background: #edf0f5; }
 .row-action { border: 0; background: transparent; color: var(--blue); font-weight: 700; padding: 5px; }
+.row-actions { display: flex; gap: 5px; align-items: center; }
+.row-action.danger { color: var(--red); }
+.assignment { min-width: 145px; height: 34px; padding: 0 8px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--ink); font-size: 12px; }
+.conflict-note { display: block; margin-top: 5px; color: var(--red); font-size: 10px; font-weight: 700; }
 .empty { padding: 44px 20px; color: var(--muted); text-align: center; }
 
 footer { margin: 0 34px; padding: 18px 0 25px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 12px; }
