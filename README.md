@@ -1,54 +1,47 @@
-# Staff Scheduling, Training and Compliance Dashboard
+# Staff Scheduling, Training & Compliance Dashboard
 
-I created this project after building my inventory system because I wanted to show a different part of my work experience. This one focuses on rotas, staff cover, training records, leave requests and everyday administrative follow-up.
+A responsive, code-based portfolio demonstration by **Rafet**. It shows how operational experience can be translated into staff scheduling, training administration, leave coordination, task management and reporting.
 
-It is a demonstration project with fictional names and records. It does not contain information from any employer or employee.
+## What the demo does
 
-## What you can do in the web version
+- Summarises weekly shifts, uncovered shifts, training actions and open tasks
+- Creates, edits and removes rota shifts
+- Assigns staff members and specific tasks to each shift
+- Updates coverage automatically when a person is assigned or removed
+- Flags overlapping assignments for the same person
+- Maintains a staff directory with roles, availability and weekly hours
+- Tracks training due dates and follow-up actions
+- Records leave decisions and cover arrangements
+- Adds administrative tasks and moves them through a simple workflow
+- Searches the current view and exports records as CSV
+- Saves changes locally in the visitor's browser using `localStorage`
+- Provides the matching modern Excel workbook as a direct download
 
-- View weekly shifts and see which ones need cover
-- Change a shift's coverage status and see the dashboard update
-- Review training dates and follow-up actions
-- Check leave requests and cover arrangements
-- Add administrative tasks
-- Move tasks from not started to in progress and complete
-- Search the current section
-- Export records as CSV
+All names and records are fictional. No employer or employee data is included.
 
-Changes are saved in the visitor's browser with `localStorage`, so no account or database is needed for the demonstration.
+## Run locally
 
-## Excel version
-
-The matching Excel workbook is included in the `downloads` folder and can also be downloaded from the web page. It uses formulas, dropdown lists, conditional formatting and a chart to summarise:
-
-- Weekly shifts
-- Shifts needing cover
-- Training that is overdue or due soon
-- Pending leave
-- Open administrative tasks
-
-## Technology
-
-- HTML
-- CSS
-- JavaScript
-- Microsoft Excel
-- GitHub Pages
-
-There is no framework, package installation or build step.
-
-## Run it locally
-
-Download the repository and open `index.html`. You can also serve the folder locally:
+No build tools or packages are required. Open `index.html`, or serve the folder:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Then visit `http://localhost:8000`.
 
-## Why I built it
+## Publish with GitHub Pages
 
-My work has involved staff coordination, training colleagues, supporting rotas and keeping operational records. I made this project to practise presenting those responsibilities in a clear office-administration format.
+1. Create a new public repository, for example `scheduling-compliance-dashboard`.
+2. Upload every file from this folder to the repository root.
+3. Open **Settings → Pages** in the repository.
+4. Under **Build and deployment**, select **Deploy from a branch**.
+5. Select the `main` branch and `/ (root)`, then save.
+6. GitHub will provide a URL similar to `https://rafet1829.github.io/scheduling-compliance-dashboard/`.
 
-If I later develop it as a real multi-user system, I would add authentication and a database. For now, keeping it as a static demonstration makes it easy for anyone to review.
+## Future live version
+
+If this later becomes a real working application, the same interface can be connected to Supabase for authenticated data storage and deployed through Cloudflare Pages. A real version should use Row Level Security, per-user ownership policies and a publishable client key—never a Supabase service-role key in browser code.
+
+## Portfolio wording
+
+Describe this as a **personal portfolio project using fictional sample data**, not as a system deployed by an employer.
