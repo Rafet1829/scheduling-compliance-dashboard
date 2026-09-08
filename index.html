@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fictional staff scheduling, training and compliance coordination portfolio project by Rafet.">
+  <title>Rafet | Scheduling & Compliance Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#dashboard" aria-label="Rafet Operations home">
+        <span class="brand-mark">R</span>
+        <span><strong>Rafet</strong><small>Operations Studio</small></span>
+      </a>
+
+      <nav id="primary-nav">
+        <button class="nav-item active" data-view="dashboard"><span>01</span> Overview</button>
+        <button class="nav-item" data-view="rota"><span>02</span> Staff rota</button>
+        <button class="nav-item" data-view="training"><span>03</span> Training</button>
+        <button class="nav-item" data-view="leave"><span>04</span> Leave & cover</button>
+        <button class="nav-item" data-view="tasks"><span>05</span> Action log</button>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="dot"></span>
+        <p><strong>Portfolio demonstration</strong><br>Fictional data only</p>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">STAFF COORDINATION SYSTEM</p>
+          <h1 id="page-title">Operations overview</h1>
+        </div>
+        <div class="top-actions">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="global-search" type="search" placeholder="Search current view" aria-label="Search current view">
+          </label>
+          <a class="button secondary button-link" href="downloads/Rafet_Scheduling_Training_Compliance_Showcase.xlsx" download>Download Excel</a>
+          <button class="button secondary" id="export-button">Export CSV</button>
+          <button class="button primary" id="add-task-button">+ Add task</button>
+        </div>
+      </header>
+
+      <section class="content" id="app-content" aria-live="polite"></section>
+
+      <footer>
+        <p>Personal portfolio project by Rafet · Sample records are fictional and contain no employer or employee information.</p>
+        <button class="text-button" id="reset-button">Reset demo data</button>
+      </footer>
+    </main>
+  </div>
+
+  <dialog id="task-dialog">
+    <form method="dialog" id="task-form">
+      <div class="dialog-header">
+        <div><p class="eyebrow">NEW RECORD</p><h2>Add administrative task</h2></div>
+        <button class="icon-button" value="cancel" aria-label="Close">×</button>
+      </div>
+      <label>Workstream<input name="workstream" required placeholder="e.g. Training"></label>
+      <label>Action<input name="action" required placeholder="What needs to be completed?"></label>
+      <div class="form-row">
+        <label>Priority<select name="priority"><option>High</option><option selected>Medium</option><option>Low</option></select></label>
+        <label>Due date<input name="dueDate" type="date" required></label>
+      </div>
+      <label>Evidence or note<input name="note" placeholder="Optional follow-up note"></label>
+      <div class="dialog-actions">
+        <button class="button secondary" value="cancel">Cancel</button>
+        <button class="button primary" value="default" id="save-task-button">Save task</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
